@@ -8,18 +8,18 @@ using std::sqrt;
 
 class vec3 {
     public:
-    float e[3];
+    double e[3];
 
-    vec3() : e{0,0,0} {};
-    vec3(double e0, double e1, double e2) : e{e0, e1, e2} {};
+    vec3() : e{0,0,0} {}
+    vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}
 
-    double x() const {return e[0];};  //Get x coordinate
-    double y() const {return e[1];};  //Get y coordinate
-    double z() const {return e[2];};  //Get z coordinate
+    double x() const {return e[0];}  //Get x coordinate
+    double y() const {return e[1];}  //Get y coordinate
+    double z() const {return e[2];}  //Get z coordinate
 
-    vec3 operator-() const{ return vec3(-e[0], -e[1], -e[2]); }; //Overloaded - operator to flip the sign of the vectors coordinates
-    double operator[](int i) const {return e[i];};
-    double& operator[](int i) const {return e[i];};
+    vec3 operator-() const{ return vec3(-e[0], -e[1], -e[2]); } //Overloaded - operator to flip the sign of the vectors coordinates
+    double operator[](int i) const {return e[i];}
+    double& operator[](int i) {return e[i];}
 
     vec3 operator+=(const vec3& v){    //Overloaded = operator to add vectors
         e[0] += v.e[0];
@@ -95,4 +95,3 @@ class vec3 {
 
 #endif
 };
-
